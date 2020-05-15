@@ -1,0 +1,14 @@
+sudo apt remove vim -y
+sudo apt install neovim -y
+#back=$(pwd)
+#
+#mkdir -p ~/.vim_tmp_install && cd ~/.vim_tmp_install
+#
+#git clone https://github.com/vim/vim.git && cd vim
+#
+##./autogen.sh
+##./configure && make
+#
+##sudo mv tmux /usr/bin/tmux
+#
+##cd $back && rm -rf ~/.tmux_tmp_install

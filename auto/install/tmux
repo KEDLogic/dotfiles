@@ -1,0 +1,14 @@
+back=$(pwd)
+
+mkdir -p ~/.tmux_tmp_install && cd ~/.tmux_tmp_install
+
+git clone https://github.com/tmux/tmux.git && cd tmux
+
+git checkout 2.8
+
+./autogen.sh
+./configure && make
+
+sudo apt remove tmux && sudo mv tmux /usr/bin/tmux
+
+cd $back && rm -rf ~/.tmux_tmp_install
