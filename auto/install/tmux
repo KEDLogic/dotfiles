@@ -1,14 +1,22 @@
-back=$(pwd)
+#!/bin/bash
 
-mkdir -p ~/.tmux_tmp_install && cd ~/.tmux_tmp_install
+VERSION=2.8
+if [[ "$( tmux -V | cut -d ' ' -f 2 )" = "$VERSION" ]]; then
+  echo "Tmux already install with desired version of $VERSION"
+  exit
+else
+  back=$(pwd)
 
-git clone https://github.com/tmux/tmux.git && cd tmux
+  mkdir -p ~/.tmux_tmp_install && cd ~/.tmux_tmp_install
 
-git checkout 2.8
+  git clone https://github.com/tmux/tmux.git && cd tmux
 
-./autogen.sh
-./configure && make
+  git checkout $VERSION
 
-sudo apt remove tmux && sudo mv tmux /usr/bin/tmux
+  ./autogen.sh
+  ./configure && make
 
-cd $back && rm -rf ~/.tmux_tmp_install
+  sudo apt remove tmux -y && sudo mv tmux /usr/bin/tmux
+
+  cd $back && rm -rf ~/.tmux_tmp_install
+fi

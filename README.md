@@ -5,15 +5,21 @@
  | (_| | (_) | |_| | | | |  __/\__ \
   \__,_|\___/ \__|_| |_|_|\___||___/
 
+# Dotfiles
 By Kyle Dozier
 MIT License
 
-# Getting Started
+## Getting Started
+Run setup.sh
 
-# Features
+App installs are in auto/installs
 
-# Zsh
+Not much else exists yet
 
-# Tmux
+## Features
 
-# Vim
+## Zsh
+
+## Tmux
+
+## Vim
