@@ -1,0 +1,7 @@
+sudo apt install zsh -y
+
+if [ -f  ~/.oh-my-zsh/oh-my-zsh.sh ]; then
+  echo "Oh-My-Zsh is already installed"
+else 
+  sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi

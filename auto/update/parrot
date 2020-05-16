@@ -1,0 +1,3 @@
+# For parrot
+sudo parrot-upgrade
+sudo apt -yq autoremove

@@ -1,15 +1,18 @@
 #!/bin/bash --login
 
-
-### Run installers 
+### Installations
 # Set all files in auto to executable
 chmod +x -R ./auto/*
-#
+
+# Update system
+./auto/update/parrot
+
 # Ruby and Python
 ./auto/install/rvm 
 ./auto/install/pyenv 
-#
+
 # Zsh, Vim & Tmux
-./auto/install/zsh
-./auto/install/vim
-./auto/install/tmux
+./auto/install/zsh 
+./auto/install/neovim 
+./auto/install/tmux 
+

@@ -1,3 +1,5 @@
-curl https://pyenv.run | bash
-
-
+if [ -f  ~/.pyenv/bin/pyenv ]; then
+  echo "Pyenv is already installed"
+else
+  curl https://pyenv.run | bash
+fi
