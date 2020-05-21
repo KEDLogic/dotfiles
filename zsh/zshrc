@@ -1,22 +1,18 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-export $EDITOR='vim'
-export $VISUAL='vim'
-
-export PATH="/home/rtr/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
+export EDITOR=vim
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/rtr/.oh-my-zsh"
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+# Set Theme
+if [ ! -f ~/.oh-my-zsh/themes/typewritten.zsh-theme ]; then 
+  wget https://raw.githubusercontent.com/reobin/typewritten/master/typewritten.zsh-theme
+  mv typewritten.zsh-theme ~/.oh-my-zsh/themes/
+fi
+ZSH_THEME="typewritten"
+TYPEWRITTEN_PROMPT_LAYOUT=multiline
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -105,3 +101,11 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+
+# RVM
+
+# Pyenv
+export PATH="/home/rtr/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"

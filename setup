@@ -1,18 +1,37 @@
-#!/bin/bash --login
+##!/bin/bash --login
+#
+#$DATETIME=$(date)
+#### Installations
+## Set all files in auto to executable
+#chmod +x -R ./auto/*
+#
+## Update system
+#./auto/update/parrot
+#
+## Install Ruby and Python
+#./auto/install/rvm 
+#./auto/install/pyenv 
+#
+## Install Zsh, Vim & Tmux
+#./auto/install/zsh 
+#./auto/install/vim 
+#./auto/install/tmux 
+#
+### Add source to config files
+# Zsh
+if [ -f ~/.zshrc ]; then
+  cp ~/.zshrc ~/zshrc.$DATETIME
+fi
+echo 'source ~/dotfiles/zsh/zshrc' > ~/.zshrc
+# Vim
+if [ -f ~/.vimrc ]; then
+  cp ~/.vimrc ~/vimrc.$DATETIME
+fi
+echo 'source ~/dotfiles/vim/vimrc' > ~/.vimrc
+# Tmux
+if [ -f ~/.tmux.conf ]; then
+  cp ~/.tmux.conf ~/tmux.conf.$DATETIME
+fi
+echo 'source ~/dotfiles/tmux/tmux.conf' > ~/.tmux.conf
 
-### Installations
-# Set all files in auto to executable
-chmod +x -R ./auto/*
-
-# Update system
-./auto/update/parrot
-
-# Ruby and Python
-./auto/install/rvm 
-./auto/install/pyenv 
-
-# Zsh, Vim & Tmux
-./auto/install/zsh 
-./auto/install/neovim 
-./auto/install/tmux 
-
+$SHELL
