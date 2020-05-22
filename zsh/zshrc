@@ -12,7 +12,8 @@ if [ ! -f ~/.oh-my-zsh/themes/typewritten.zsh-theme ]; then
   mv typewritten.zsh-theme ~/.oh-my-zsh/themes/
 fi
 ZSH_THEME="typewritten"
-TYPEWRITTEN_PROMPT_LAYOUT=multiline
+export TYPEWRITTEN_PROMPT_LAYOUT=multiline
+export TYPEWRITTEN_CURSOR="block"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
